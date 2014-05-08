@@ -1,0 +1,66 @@
+{
+    "name": "diegopazos/l4-starter",
+    "description": "Laravel 4 Admin Starter",
+    "keywords": ["laravel", "Starter Site", "Admin Site", "Portal"],
+    "license": "MIT",
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/Zizaco/ardent.git"
+    }],
+    "require": {
+        "laravel/framework": "4.1.*",
+        "zizaco/confide": "dev-master",
+        "zizaco/entrust": "dev-master",
+        "anlutro/l4-settings": "dev-master",
+        "j20/php-uuid": "dev-master",
+        "bllim/datatables": "*",
+        "thomaswelton/laravel-gravatar": "dev-master",
+        "khill/lavacharts": "dev-master",
+        "regulus/activity-log": "dev-master",
+        "caouecs/laravel4-lang": "dev-master",
+        "raahul/larryfour": "1.*",
+        "hybridauth/hybridauth": "*",
+        "msurguy/honeypot": "dev-master",
+        "rtablada/profane": "dev-master"
+    },
+    "require-dev": {
+        "way/generators": "dev-master",
+        "mockery/mockery": "dev-master@dev",
+        "summerstreet/woodling": "0.1.*",
+        "barryvdh/laravel-ide-helper": "dev-master",
+        "lmammino/jsmin4assetic": "1.0.*",
+        "phpunit/phpunit": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+
+            "app/commands",
+            "app/controllers",
+            "app/library",
+            "app/models",
+            "app/presenters",
+            "app/database/migrations",
+            "app/database/seeds",
+            "app/tests/library"
+        ],
+        "psr-0": {
+            "Atticmedia\\Anvard": "vendor/atticmedia/anvard/src"
+        }
+
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "php artisan clear-compiled"
+        ],
+        "post-install-cmd": [
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev"
+}
