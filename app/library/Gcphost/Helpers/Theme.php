@@ -86,6 +86,8 @@ class Theme {
 		Route::controller('roles/{role}', 'AdminRolesController');
 		Route::controller('roles', 'AdminRolesController');
 
+	
+
 		# Todos
 		Route::controller('todos/{todo}', 'AdminTodosController');
 		Route::controller('todos', 'AdminTodosController');

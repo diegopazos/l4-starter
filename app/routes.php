@@ -7,6 +7,7 @@ Route::model('id', 'id');
 Route::model('post', 'Post');
 Route::model('todo', 'Todos');
 Route::model('role', 'Role');
+Route::model('map', 'Map');
 
 /** ------------------------------------------
  *  Route constraint patterns
@@ -20,6 +21,7 @@ Route::pattern('profile', '[0-9]+');
 Route::pattern('role', '[0-9]+');
 Route::pattern('id', '[0-9]+');
 Route::pattern('token', '[0-9a-z]+');
+Route::pattern('map', '[0-9]+');
 
 
 /** ------------------------------------------
@@ -57,6 +59,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth|checkuser'), function(
  *  ------------------------------------------
  */
 
+
+
+
 Event::fire('page.site');
 
 Route::get('invalidtoken', 'UserController@invalidtoken');
@@ -73,15 +78,19 @@ Route::controller('user', 'UserController');
 //:: Application Routes ::
 
 # Filter for detect language
-Route::when('contact-us','detectLang');
+Route::when('contact','detectLang');
 
 # Contact Us Static Page
-Route::post('contact-us', 'BlogController@postContactUs');
-Route::get('contact-us', 'BlogController@getContactUs');
+Route::post('contact', 'BlogController@postContactUs');
+Route::get('contact', 'BlogController@getContactUs');
+
+
 
 # Get javascript translations
 Route::get('translation.js', 'BlogController@getJavascript');
 
+Route::get('map', 'MapController@index');
+Route::get('map/{name}', 'MapController@show');
 
 # Posts - Second to last set, match slug
 Route::get('{postSlug}', 'BlogController@getView');

@@ -29,16 +29,15 @@
 
 @if($post->banner)<a href="{{{ $post->url() }}}" class="thumbnail"><img width="100%" src="{{{ $post->banner }}}" alt=""></a>@endif
 
-<br/>
+
 <div class="clearfix">
 	@if($post->display_author)<div class="pull-left"><img alt="{{{ $post->author->email }}}" src="{{ Gravatar::src($post->author->email, 80) }}"></div>@endif
-	<div class="pull-left" >
-		<h3>&nbsp;{{ $post->title }}</h3>
-		@if($post->display_author)<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By {{ $post->author->displayname }}, {{{ Lang::get('site.posted') }}} {{{ $post->date() }}}</div>@endif
+	<div class="pull-left">
+		<h1>{{ $post->title }}</h1>
+		@if($post->display_author)<div>By {{ $post->author->displayname }}, {{{ Lang::get('site.posted') }}} {{{ $post->date() }}}</div>@endif
 	</div>
 </div>
 
-<hr />
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -47,7 +46,7 @@
 </div>
 
 @if($post->allow_comments)
-<hr />
+
 
 
 <a id="comments"></a>
@@ -77,30 +76,26 @@
 		</div>
 	</div>
 </div>
-<hr />
 @endforeach
 @else
-<hr />
 @endif
 
 @if ( ! Auth::check())
 	<div class="alert alert-danger alert-block">
-		<p>{{{ Lang::get('site.login_to_comment') }}}</p>
-		<p>{{ Lang::get('site.comment_login', array('login' => URL::to('user/login'), 'create' => URL::to('user/create'))) }}</p>
+		<p>{{{ Lang::get('site.login_to_comment') }}}<br /><br />
+		{{ Lang::get('site.comment_login', array('login' => URL::to('user/login'), 'create' => URL::to('user/create'))); }} 
 	</div>
 @elseif ( ! $canComment )
 	<div class="alert alert-danger alert-block">
 		<p>{{{ Lang::get('site.comment_no_perm') }}}</p>
 	</div>
 @else
-	<div class="row">
+	<h4>{{{ Lang::get('site.add_comment') }}}</h4>
 	<form method="post" action="{{{ URL::to($post->slug) }}}">
 		<input type="hidden" name="_token" value="{{{ Session::getToken() }}}" />
-		{{ Form::honeypot('comment_hp', 'comment_time') }}
-
 		<div class="form-group">
 			<div class="col-md-12">
-				<textarea placeholder="{{{ Lang::get('site.add_comment') }}}" class="col-md-12 form-control" rows="4" name="comment" id="comment">{{{ Request::old('comment') }}}</textarea>
+				<textarea class="col-md-12 input-block-level" rows="4" name="comment" id="comment">{{{ Request::old('comment') }}}</textarea>
 			</div>
 		</div>
 
@@ -110,11 +105,7 @@
 			</div>
 		</div>
 	</form>
-	</div>
-
 @endif
-
-
 @if($errors->has())
 <div class="alert alert-danger alert-block">
 <ul>

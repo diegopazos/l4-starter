@@ -23,7 +23,7 @@ class PostsTableSeeder extends Seeder {
             array(
                 'user_id'    => $user_id,
                 'title'      => 'About Us',
-                'slug'       => 'about-us',
+                'slug'       => 'about',
                 'content'    => 'About us content..',
                 'meta_title' => 'meta_title2',
                 'meta_description' => 'meta_description2',

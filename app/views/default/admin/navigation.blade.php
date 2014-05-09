@@ -6,7 +6,7 @@
 				<span class="sr-only">{{{ Lang::get('core.toggle_nav') }}}</span>
 			</button>
 			<div id="logo"></div>
-			<a href="{{{ URL::to('admin') }}}" class="navbar-brand" title="{{{ Setting::get('site.name') }}}">{{{ Setting::get('site.name') }}} </a>
+			<a href="{{{ URL::to('admin') }}}" class="navbar-brand" title="{{{ Setting::get('site.admin_name') }}}">{{{ Setting::get('site.admin_name') }}} </a>
 		</div>
 		<div class="collapse navbar-collapse">
 			
@@ -20,6 +20,11 @@
 						<li{{ (Request::is('admin/users*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/users') }}}"><span class="fa fa-user fa-fw"></span> &nbsp; {{{ Lang::get('core.users') }}}</a></li>
 						<li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/roles') }}}"><span class="fa fa-warning fa-fw"></span> &nbsp; {{{ Lang::get('Roles') }}}</a></li>
 					</ul>
+				</li>
+				<li>
+					<a id="nav_users" href="{{{ URL::to('admin/maps') }}}">
+						<span class="fa fa-fw fa-users"></span> Maps</span>
+					</a>
 				</li>
 				@yield('main-nav-post')
 			</ul>

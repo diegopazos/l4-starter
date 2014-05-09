@@ -109,6 +109,7 @@ Entrust::routeNeedsPermission( 'admin/comments*', 'manage_comments', Redirect::t
 Entrust::routeNeedsPermission( 'admin/users*', 'manage_users', Redirect::to('/admin') );
 Entrust::routeNeedsPermission( 'admin/roles*', 'manage_roles', Redirect::to('/admin') );
 Entrust::routeNeedsPermission( 'admin/settings*', 'manage_settings', Redirect::to('/admin') );
+Entrust::routeNeedsPermission( 'admin/maps*', 'manage_settings', Redirect::to('/admin') );
 
 /*
 |--------------------------------------------------------------------------

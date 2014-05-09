@@ -28,6 +28,9 @@
 					<div class="tab-pane @if($a == 'site')active@endif" id="{{{ $a }}}">
 					<table width="80%" class="table table-bordered table-striped table-hover">
 					@foreach($b as $c => $d)
+						@if(in_array($c, array('theme', 'bootswatch')))
+							<input type="hidden" name="settings[{{ $a }}.{{ $c }}]" value="{{$d}}">
+						@else
 							<tr>
 								 <td><label class="control-label">{{ Lang::has('core::settings.'.$c) ? trans('core::settings.'.$c) : preg_replace('/_/i', ' ', $c) }}</label></td>
 								 <td>
@@ -52,11 +55,17 @@
 											<option value="united" {{ $d=='united' ? 'selected' : false }}>United</option>
 											<option value="yeti" {{ $d=='yeti' ? 'selected' : false }}>Yeti</option>
 										</select>
+									@elseif($c == "default_role_id")
+										<select class="form-control" name="settings[{{ $a }}.{{ $c }}]">
+											<option value="1" {{ $d=='1' ? 'selected' : false }}>Admin</option>
+											<option value="2" {{ $d=='2' ? 'selected' : false }}>User</option>
+										</select>
 									@else
 										<input class="col-lg-12 form-control" type="text" name="settings[{{ $a }}.{{ $c }}]" value="{{ $d }}">
 									@endif
 								</td>
 							</tr>
+						@endif
 					 @endforeach
 					</table>
 					</div>

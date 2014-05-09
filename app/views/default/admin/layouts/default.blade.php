@@ -14,30 +14,30 @@
 	<meta name="description" content="@yield('description')"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 	<meta name="csrf-token" content="{{{ csrf_token() }}}"/>
-	<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}"/>
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{{ asset('assets/ico/apple-touch-icon-144-precomposed.png') }}}"/>
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{{ asset('assets/ico/apple-touch-icon-114-precomposed.png') }}}"/>
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('assets/ico/apple-touch-icon-72-precomposed.png') }}}"/>
-	<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}"/>
+	<link rel="shortcut icon" href="{{{ asset('assets/admin/ico/favicon.png') }}}"/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{{ asset('assets/admin/ico/apple-touch-icon-144-precomposed.png') }}}"/>
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{{ asset('assets/admin/ico/apple-touch-icon-114-precomposed.png') }}}"/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('assets/admin/ico/apple-touch-icon-72-precomposed.png') }}}"/>
+	<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/admin/ico/apple-touch-icon-57-precomposed.png') }}}"/>
 
 	@include(Theme::path('admin/css'))
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdn.jsdelivr.net/bootstrap.wysiwyg/0.1/bootstrap-wysiwyg.min.js"></script>
-	<script src="{{{ asset('assets/js/bootstrap-wysiwyg-start.js') }}}"></script>
+	<script src="{{{ asset('assets/admin/js/bootstrap-wysiwyg-start.js') }}}"></script>
 	<script src="{{{ URL::to('translation.js') }}}"></script>
-	<script src="{{{ asset('assets/js/jquery.poller.js') }}}"></script>
+	<script src="{{{ asset('assets/admin/js/jquery.poller.js') }}}"></script>
 	<script type="text/javascript">
 		/* setup poller with the url */
 		$.fn.poller({'url':'{{{ URL::to("admin/polling") }}}'});
 	</script>
 
-	<script src="{{{ asset('assets/js/site.js') }}}"></script>
+	<script src="{{{ asset('assets/admin/js/site.js') }}}"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
-	<script src="{{{ asset('assets/js/datatables.fnReloadAjax.js') }}}"></script>
-	<script src="{{{ asset('assets/js/datatables-bootstrap.js') }}}"></script>
-	<script src="{{{ asset('assets/js/datatables.js') }}}"></script>
+	<script src="{{{ asset('assets/admin/js/datatables.fnReloadAjax.js') }}}"></script>
+	<script src="{{{ asset('assets/admin/js/datatables-bootstrap.js') }}}"></script>
+	<script src="{{{ asset('assets/admin/js/datatables.js') }}}"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/2.7.0/jquery.simpleWeather.min.js"></script>

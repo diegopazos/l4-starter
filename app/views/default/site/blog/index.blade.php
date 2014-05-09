@@ -49,6 +49,7 @@
 	</div>
 </div>
 
+<hr />
 @endforeach
 
 {{ $posts->links() }}
